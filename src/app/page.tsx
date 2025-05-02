@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 interface Todo {
   id: number;
@@ -44,7 +45,15 @@ export default function Home() {
   return (
     <main className="min-h-screen p-8 bg-gray-100">
       <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6">
-        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Todo App</h1>
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-3xl font-bold text-gray-800">Todo App</h1>
+          <Link 
+            href="/about"
+            className="px-4 py-2 text-blue-500 hover:text-blue-600 transition-colors"
+          >
+            Hakkımızda
+          </Link>
+        </div>
         
         <form onSubmit={addTodo} className="mb-6">
           <div className="flex gap-2">
